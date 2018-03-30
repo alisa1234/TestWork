@@ -1,0 +1,9 @@
+<div class="wrapper">
+  <div class="title">{{loginService.title}}</div>
+  <mat-progress-bar mode="determinate" [value]="progress"></mat-progress-bar>
+  <app-step-1 *ngIf="steps['step_1']"></app-step-1>
+  <app-step-2 *ngIf="steps['step_2']"></app-step-2>
+  <app-step-3 *ngIf="steps['step_3']"></app-step-3>
+  <button *ngIf="!steps['step_3']" class="next_step" type="submit" [class.active]="isValid" [disabled]="!isValid" (click)="NextStep()">Next<i class="fas fa-arrow-right"></i></button>
+  <button *ngIf="steps['step_2']" class="back" type="submit" (click)="Back()"><i class="fas fa-arrow-left"></i>Back</button>
+</div>

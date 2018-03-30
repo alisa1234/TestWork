@@ -1,0 +1,9 @@
+.mat-form-field {
+    width: 100%;
+}
+.error {
+    font-size: 75%;
+    color: red;
+    margin-top: -15px;
+    font-family: Roboto,"Helvetica Neue",sans-serif;
+}

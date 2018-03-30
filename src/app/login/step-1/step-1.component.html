@@ -1,0 +1,18 @@
+<form [formGroup]="loginService.form_step1">
+    <mat-form-field>
+      <input matInput type="email" placeholder="Email" formControlName="email" [(ngModel)]="email_model" required>
+      <mat-error *ngIf="email.errors && (email.dirty || email.touched)&& email.errors.required">Email is required!</mat-error>
+      <mat-error *ngIf="email.errors && (email.dirty || email.touched)&&email.errors.pattern">Not valid email adress!</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="password" placeholder="Password" formControlName="password" required>
+      <mat-error *ngIf="password.errors && (password.dirty || password.touched)&& password.errors.required">Password is required!</mat-error>
+      <mat-error *ngIf="password.errors && (password.dirty || password.touched)&& password.errors.minlength">Password must be minimum 6 characters!</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="password" placeholder="Confirm Password" formControlName="confirm_password" required>
+      <mat-error *ngIf="confirm_password.errors && (confirm_password.dirty || confirm_password.touched)&& confirm_password.errors.required">Password is required!</mat-error>
+    </mat-form-field>
+  <p class="error" *ngIf="loginService.form_step1.hasError('notSame')">Passwords doesn't match!</p>
+</form>
+

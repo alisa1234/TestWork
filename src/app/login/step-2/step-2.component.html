@@ -1,0 +1,37 @@
+<div class="title">Date of Birth</div>
+<div class="date_wrapper">
+  <form [formGroup]="loginService.form_date">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="DD" formControlName="day" type="number" required>
+      <mat-error *ngIf="day.errors && (day.dirty || day.touched)&& day.errors.required">Day is required!</mat-error>
+      <mat-error *ngIf="day.errors && (day.dirty || day.touched)&&day.errors.pattern">Not valid day type!</mat-error>
+    </mat-form-field>
+    <p class="error" *ngIf="loginService.form_date.hasError('leap')">Not valid day of month!</p>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="MM" formControlName="month" type="number" required>
+      <mat-error *ngIf="month.errors && (month.dirty || month.touched)&& month.errors.required">Month is required!</mat-error>
+      <mat-error *ngIf="month.errors && (month.dirty || month.touched)&&month.errors.pattern">Not valid month type!</mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="YYYY" formControlName="year" type="number" required>
+      <mat-error *ngIf="year.errors && (year.dirty || year.touched)&& year.errors.required">Year is required!</mat-error>
+    </mat-form-field>
+    <p class="error" *ngIf="loginService.form_date.hasError('young')">Sorry, you don't yet have 18!</p>
+  </form>
+</div>
+<div class="title">Gender</div>
+<div class="date_wrapper">
+  <button mat-raised-button [class.active]="choose['male']" (click)="getGender('male')">Male</button>
+  <button mat-raised-button [class.active]="choose['famale']" (click)="getGender('famale')">Female</button>
+  <button mat-raised-button [class.active]="choose['unspecified']" (click)="getGender('unspecified')">Unspecified</button>
+</div>
+<p class="error"  *ngIf="loginService.error">You need chose a gender!</p>
+<div class="title">Where do you hear about us</div>
+<div class="date_wrapper">
+  <mat-form-field>
+    <mat-select placeholder="Optional" [(value)]="selected" (change)="Selected(selected)">
+      <mat-option value="internet">Internet</mat-option>
+      <mat-option value="other">Other</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>

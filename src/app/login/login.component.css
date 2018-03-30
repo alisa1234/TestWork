@@ -1,0 +1,46 @@
+mat-progress-bar {
+    margin-bottom: 10px;
+}
+.wrapper {
+    width: 400px;
+    margin: 0 auto;
+    position: relative;
+}
+.wrapper > .title {
+    color: cornflowerblue;
+    text-align: center;
+    padding: 20px 0;
+}
+.next_step {
+    border: none;
+    color: grey;
+    font-size: 18px;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    outline: none;
+}
+.back {
+    border: none;
+    color: grey;
+    font-size: 18px;
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    outline: none;
+}
+.fa-arrow-right {
+    color: grey;
+    margin-left: 10px;
+}
+.fa-arrow-left {
+    color: grey;
+    margin-right: 10px;
+}
+.active{
+    color: cornflowerblue;
+}
+
+.active > .fa-arrow-right {
+    color: cornflowerblue;
+}
